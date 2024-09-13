@@ -1,35 +1,73 @@
+/* Estilo para el fondo general */
+ion-content {
+  --background: linear-gradient(135deg, #667eea, #764ba2); /* Degradado de azul a púrpura */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Estilo para el contenedor de login */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 20px;
-  }
-  
-  ion-card {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    margin: 0 auto;
-  }
-  
-  ion-card-title {
-    text-align: center;
-  }
-  
-  ion-button {
-    margin-top: 20px;
-    --background: #3880ff;
-    --color: white;
-  }
-  
-  ion-item {
-    margin-top: 10px;
-  }
-  
-  a {
-    color: #3880ff;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+/* Estilo para la tarjeta */
+ion-card {
+  max-width: 400px;
+  width: 100%;
+  background-color: white; /* Fondo blanco sólido */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 15px; /* Bordes redondeados */
+  overflow: hidden;
+}
+
+/* Estilo del encabezado de la tarjeta */
+ion-card-header {
+  background-color: #ffffff;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.3em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea sutil */
+}
+
+/* Estilo para el contenido de la tarjeta */
+ion-card-content {
+  color: #333;
+  padding: 20px;
+  font-size: 1em;
+}
+
+/* Estilo para los items del formulario */
+ion-item {
+  --background: rgba(255, 255, 255, 0.9); /* Fondo blanco */
+  margin-bottom: 15px;
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo para los botones */
+ion-button {
+  margin-top: 15px;
+  --border-radius: 30px; /* Bordes redondeados */
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+}
+
+ion-button[color="light"] {
+  --background: #e0e0e0; /* Fondo gris claro para botón "Olvidé mi contraseña" */
+  --color: #333; /* Texto oscuro */
+}
+
+/* Enlaces */
+a {
+  color: #667eea; /* Color de enlace azul */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

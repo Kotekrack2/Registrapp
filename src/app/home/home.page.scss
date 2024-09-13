@@ -1,52 +1,62 @@
+/* Estilo para el fondo general */
+ion-content {
+  --background: linear-gradient(135deg, #667eea, #764ba2); /* Degradado de azul a púrpura */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 /* Estilo para el contenedor principal */
 #container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: #f2f2f2; /* Fondo gris claro */
   padding: 20px;
 }
 
 /* Estilo para la tarjeta */
 ion-card {
-  max-width: 400px; /* Ancho máximo de la tarjeta */
+  max-width: 400px;
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-  border-radius: 10px; /* Bordes redondeados */
-  overflow: hidden; /* Para mantener los bordes redondeados */
+  background-color: white; /* Fondo blanco sólido */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 15px; /* Bordes redondeados */
+  overflow: hidden;
 }
 
 /* Estilo del encabezado de la tarjeta */
 ion-card-header {
-  background-color: #3880ff; /* Fondo azul de Ionic */
-  color: white; /* Texto en blanco */
-  text-align: center; /* Centrar el texto */
-  padding: 20px; /* Espaciado interno */
-  font-size: 1.2em; /* Tamaño del texto */
+  background-color: #ffffff;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.3em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea sutil */
 }
 
 /* Estilo para el contenido de la tarjeta */
 ion-card-content {
-  background-color: white; /* Fondo blanco */
-  color: #333; /* Color de texto */
-  padding: 20px; /* Espaciado interno */
-  font-size: 1em; /* Tamaño de fuente */
+  color: #333;
+  padding: 20px;
+  font-size: 1em;
 }
 
 /* Estilo para el botón */
 ion-button {
-  margin-top: 20px; /* Espacio entre el texto y el botón */
-  --background: #3880ff; /* Fondo del botón */
-  --border-radius: 5px; /* Bordes redondeados */
+  margin-top: 20px;
+  --background: #764ba2; /* Fondo púrpura */
+  --border-radius: 30px; /* Bordes redondeados */
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
 /* Enlaces en el texto */
 a {
-  color: #3880ff; /* Color del enlace */
-  text-decoration: none; /* Sin subrayado */
+  color: #667eea; /* Color de enlace azul */
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; /* Subrayado al pasar el mouse */
+  text-decoration: underline;
 }
