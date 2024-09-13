@@ -12,7 +12,6 @@
   </ion-header>
 
   <div class="recover-container">
-    <!-- Paso 1: Ingreso de correo electrónico -->
     <div *ngIf="!isCodeSent && !isPasswordRevealed">
       <ion-card>
         <ion-card-header>
@@ -30,7 +29,6 @@
       </ion-card>
     </div>
 
-    <!-- Paso 2: Ingreso del código de verificación -->
     <div *ngIf="isCodeSent && !isPasswordRevealed">
       <ion-card>
         <ion-card-header>
@@ -48,7 +46,6 @@
       </ion-card>
     </div>
 
-    <!-- Paso 3: Mostrar contraseña antigua y botón de volver al login -->
     <div *ngIf="isPasswordRevealed">
       <ion-card>
         <ion-card-header>

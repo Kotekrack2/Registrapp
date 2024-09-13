@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -7,15 +7,16 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  email: string = '';
+  email: string = '';       
+  nombreUsuario: string = '';  
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // Obtén el correo electrónico de los parámetros de navegación
-    this.route.queryParams.subscribe(params => {
-      this.email = params['email'] || '';  // Usa el correo electrónico proporcionado o una cadena vacía si no está disponible
-    });
+    
+    this.nombreUsuario = localStorage.getItem('email') || 'Email';
+
+    
+    console.log('Nombre de usuario recuperado:', this.nombreUsuario);
   }
 }
-

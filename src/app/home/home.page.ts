@@ -11,8 +11,6 @@ export class HomePage {
   constructor(private router: Router) {}
 
   exploreMore() {
-    // Aquí puedes definir la lógica para la acción del botón
-    // Por ejemplo, redirigir a otra página
-    this.router.navigateByUrl('/login'); // Cambia '/explore' a la ruta de la página que quieras redirigir
+    this.router.navigateByUrl('/login'); 
   }
 }

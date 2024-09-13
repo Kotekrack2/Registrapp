@@ -1,13 +1,13 @@
-/* Estilo para el fondo general */
+
 ion-content {
-  --background: linear-gradient(135deg, #667eea, #764ba2); /* Degradado de azul a púrpura */
+  --background: linear-gradient(135deg, #667eea, #764ba2); 
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 
-/* Estilo para el contenedor de bienvenida */
+
 .welcome-container {
   display: flex;
   justify-content: center;
@@ -16,49 +16,48 @@ ion-content {
   padding: 20px;
 }
 
-/* Estilo para la tarjeta */
+
 ion-card {
   max-width: 400px;
   width: 100%;
-  background-color: white; /* Fondo blanco sólido */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  border-radius: 15px; /* Bordes redondeados */
+  background-color: white; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 15px; 
   overflow: hidden;
 }
 
-/* Estilo del encabezado de la tarjeta */
+
 ion-card-header {
   background-color: #ffffff;
   color: #333;
   text-align: center;
   padding: 20px;
   font-size: 1.3em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea sutil */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
 }
 
-/* Estilo para el contenido de la tarjeta */
+
 ion-card-content {
   color: #333;
   padding: 20px;
   font-size: 1em;
-  text-align: center; /* Centra el texto */
+  text-align: center; 
 }
 
-/* Estilo para el párrafo de bienvenida */
+
 p {
   font-size: 1.2em;
   color: #333;
   margin: 10px 0;
 }
 
-/* Estilo adicional para resaltar el email */
+
 p strong {
-  color: #764ba2; /* Resalta el correo electrónico en púrpura */
+  color: #764ba2; 
 }
 
-/* Enlaces */
 a {
-  color: #667eea; /* Color de enlace azul */
+  color: #667eea; 
   text-decoration: none;
 }
 
