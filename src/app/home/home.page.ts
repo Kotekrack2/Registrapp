@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
+  exploreMore() {
+    // Aquí puedes definir la lógica para la acción del botón
+    // Por ejemplo, redirigir a otra página
+    this.router.navigateByUrl('/login'); // Cambia '/explore' a la ruta de la página que quieras redirigir
+  }
 }
