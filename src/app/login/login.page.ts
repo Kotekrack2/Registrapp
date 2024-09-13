@@ -8,23 +8,57 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  email: string = '';  
-  password: string = '';  
+  email: string = '';
+  password: string = '';
+
+  emailError: boolean = false;
+  emailErrorMessage: string = '';
+
+  passwordError: boolean = false;
+  passwordErrorMessage: string = '';
 
   constructor(private router: Router) { }
 
   ngOnInit() {}
 
   onSubmit() {
-    
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
+    if (this.validateInputs()) {
+      console.log('Email:', this.email);
+      console.log('Password:', this.password);
 
-    
-    this.saveUsername(this.email);
+      this.saveUsername(this.email);
+      this.router.navigateByUrl('/inicio');
+    }
+  }
 
-    
-    this.router.navigateByUrl('/inicio');
+  validateInputs(): boolean {
+    this.emailError = false;
+    this.passwordError = false;
+
+    if (!this.email) {
+      this.emailError = true;
+      this.emailErrorMessage = 'El correo es obligatorio.';
+      return false;
+    }
+
+    if (!this.isValidEmail(this.email)) {
+      this.emailError = true;
+      this.emailErrorMessage = 'Por favor ingrese un correo válido.';
+      return false;
+    }
+
+    if (!this.password) {
+      this.passwordError = true;
+      this.passwordErrorMessage = 'La contraseña es obligatoria.';
+      return false;
+    }
+
+    return true;
+  }
+
+  isValidEmail(email: string): boolean {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email);
   }
 
   recoverPassword() {
