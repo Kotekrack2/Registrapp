@@ -1,24 +1,52 @@
+/* Estilo para el contenedor principal */
 #container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-color: #f2f2f2; /* Fondo gris claro */
   padding: 20px;
 }
 
+/* Estilo para la tarjeta */
 ion-card {
+  max-width: 400px; /* Ancho máximo de la tarjeta */
   width: 100%;
-  max-width: 500px;
-  padding: 20px;
-  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Para mantener los bordes redondeados */
 }
 
-ion-card-title {
-  text-align: center;
+/* Estilo del encabezado de la tarjeta */
+ion-card-header {
+  background-color: #3880ff; /* Fondo azul de Ionic */
+  color: white; /* Texto en blanco */
+  text-align: center; /* Centrar el texto */
+  padding: 20px; /* Espaciado interno */
+  font-size: 1.2em; /* Tamaño del texto */
 }
 
+/* Estilo para el contenido de la tarjeta */
+ion-card-content {
+  background-color: white; /* Fondo blanco */
+  color: #333; /* Color de texto */
+  padding: 20px; /* Espaciado interno */
+  font-size: 1em; /* Tamaño de fuente */
+}
+
+/* Estilo para el botón */
 ion-button {
-  margin-top: 20px;
-  --background: #3880ff;
-  --color: white;
+  margin-top: 20px; /* Espacio entre el texto y el botón */
+  --background: #3880ff; /* Fondo del botón */
+  --border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Enlaces en el texto */
+a {
+  color: #3880ff; /* Color del enlace */
+  text-decoration: none; /* Sin subrayado */
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
 }
