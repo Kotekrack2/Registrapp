@@ -22,8 +22,9 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
-  },  {
-    path: 'error404',
+  },
+  {
+    path: '**',
     loadChildren: () => import('./error404/error404.module').then( m => m.Error404PageModule)
   },
 
