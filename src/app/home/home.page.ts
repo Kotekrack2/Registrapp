@@ -10,7 +10,7 @@ export class HomePage {
 
   constructor(private router: Router) {}
 
-  exploreMore() {
-    this.router.navigateByUrl('/login'); 
+  iniciarSesion() {
+    this.router.navigateByUrl('login'); 
   }
 }

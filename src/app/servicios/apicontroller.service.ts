@@ -34,9 +34,5 @@ export class APIControllerService {
     return this.http.delete(`${this.apiURL}/usuarios/${id}`);
   }
 
-  getUsuarioById(id: string) {
-    return this.http.get<any>(`${this.apiURL}/usuarios/${id}`);
-  }
-
 
 }

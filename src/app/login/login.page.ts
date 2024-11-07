@@ -1,72 +1,58 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { APIControllerService } from '../servicios/apicontroller.service'; 
+import { AuthenticatorService } from '../servicios/authenticator.service'; 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+  correo: string = '';
+  contrasena: string = '';
+  errorMessage: string = '';
 
-  email: string = '';
-  password: string = '';
+  constructor(
+    private apiService: APIControllerService,
+    private router: Router,
+    private authenticatorService: AuthenticatorService  
+  ) {}
 
-  emailError: boolean = false;
-  emailErrorMessage: string = '';
+  async iniciarSesion() {
+    try {
+      
+      const usuarios = await this.apiService.getUsuarios().toPromise();
 
-  passwordError: boolean = false;
-  passwordErrorMessage: string = '';
+      
+      const usuarioEncontrado = usuarios.find(
+        (usuario: any) => usuario.correo === this.correo && usuario.contrasena === this.contrasena
+      );
 
-  constructor(private router: Router) { }
+      if (usuarioEncontrado) {
+        console.log('Usuario encontrado:', usuarioEncontrado);
 
-  ngOnInit() {}
-
-  onSubmit() {
-    if (this.validateInputs()) {
-      console.log('Email:', this.email);
-      console.log('Password:', this.password);
-
-      this.saveUsername(this.email);
-      this.router.navigateByUrl('/inicio');
+        
+        const loginExitoso = await this.authenticatorService.loginBDD(this.correo, this.contrasena);
+        
+        if (loginExitoso) {
+          console.log('Login correcto, redirigiendo a la vista del director...');
+          this.router.navigate(['/director']);  
+        } else {
+          this.errorMessage = 'Correo o contraseña incorrectos';
+          console.log('Login fallido, redirigiendo al login.');
+        }
+      } else {
+       
+        this.errorMessage = 'Correo o contraseña incorrectos';
+        console.log('Usuario no encontrado en la base de datos');
+      }
+    } catch (error) {
+      // Manejar errores en caso de que falle la solicitud a la API
+      this.errorMessage = 'Error al iniciar sesión. Intente de nuevo.';
+      console.error('Error al obtener usuarios: ', error);
     }
   }
 
-  validateInputs(): boolean {
-    this.emailError = false;
-    this.passwordError = false;
 
-    if (!this.email) {
-      this.emailError = true;
-      this.emailErrorMessage = 'El correo es obligatorio.';
-      return false;
-    }
-
-    if (!this.isValidEmail(this.email)) {
-      this.emailError = true;
-      this.emailErrorMessage = 'Por favor ingrese un correo válido.';
-      return false;
-    }
-
-    if (!this.password) {
-      this.passwordError = true;
-      this.passwordErrorMessage = 'La contraseña es obligatoria.';
-      return false;
-    }
-
-    return true;
-  }
-
-  isValidEmail(email: string): boolean {
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(email);
-  }
-
-  recoverPassword() {
-    this.router.navigateByUrl('/recuperarpass'); 
-  }
-
-  saveUsername(email: string) {
-    localStorage.setItem('email', email);
-    console.log('Nombre de usuario guardado en localStorage:', email);
-  }
 }

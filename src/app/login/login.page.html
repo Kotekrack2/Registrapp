@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Login</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,43 +14,38 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="login-container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Iniciar Sesión</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-          <ion-item>
-            <ion-label position="floating">Correo Electrónico</ion-label>
-            <ion-input
-              type="email"
-              [(ngModel)]="email"
-              name="email"
-              required
-            ></ion-input>
-          </ion-item>
-          <ion-text color="danger" *ngIf="emailError">
-            <p>{{ emailErrorMessage }}</p>
-          </ion-text>
+  <div id="login-container">
+    <form (ngSubmit)="iniciarSesion()" #loginForm="ngForm">
+      <ion-list>
+        <ion-item>
+          <ion-label>Correo: </ion-label>
+          <ion-input type="text" [(ngModel)]="correo" name="correo" required (ngModelChange)="errorMessage = ''"></ion-input>
+        </ion-item>
 
-          <ion-item>
-            <ion-label position="floating">Contraseña</ion-label>
-            <ion-input
-              type="password"
-              [(ngModel)]="password"
-              name="password"
-              required
-            ></ion-input>
-          </ion-item>
-          <ion-text color="danger" *ngIf="passwordError">
-            <p>{{ passwordErrorMessage }}</p>
-          </ion-text>
+        <ion-item>
+          <ion-label>Contraseña: </ion-label>
+          <ion-input type="password" [(ngModel)]="contrasena" name="contrasena" required></ion-input>
+        </ion-item>
 
-          <ion-button expand="full" type="submit">Iniciar Sesión</ion-button>
-          <ion-button expand="full" color="light" (click)="recoverPassword()">Olvidé mi contraseña</ion-button>
-        </form>
-      </ion-card-content>
-    </ion-card>
+        <ion-text color="primary">
+          <a [routerLink]="['/recuperar']" class="recover-link">Recuperar contraseña</a>
+        </ion-text>
+
+        <ion-button expand="full" type="submit">
+          Iniciar Sesión
+        </ion-button>
+
+        <!-- Enlace para el registro -->
+        <ion-text color="primary">
+          <a [routerLink]="['/registro']" class="register-link">Regístrate</a>
+        </ion-text>
+
+
+        <!-- Mensaje de error -->
+        <ion-text color="danger" *ngIf="errorMessage">
+          <p>{{ errorMessage }}</p>
+        </ion-text>
+      </ion-list>
+    </form>
   </div>
 </ion-content>
