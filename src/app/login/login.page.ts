@@ -36,8 +36,8 @@ export class LoginPage {
         const loginExitoso = await this.authenticatorService.loginBDD(this.correo, this.contrasena);
         
         if (loginExitoso) {
-          console.log('Login correcto, redirigiendo a la vista del director...');
-          this.router.navigate(['/director']);  
+          console.log('Login correcto, redirigiendo a la vista principal');
+          this.router.navigate(['/inicio']);  
         } else {
           this.errorMessage = 'Correo o contraseña incorrectos';
           console.log('Login fallido, redirigiendo al login.');
