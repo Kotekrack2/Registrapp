@@ -35,7 +35,6 @@ export class MantenedorPage implements OnInit {
   }
 
   modificarUsuario(id: string) {
-    // logica en moduser.ts
     this.navCtrl.navigateForward(`/moduser/${id}`);
   }
 
