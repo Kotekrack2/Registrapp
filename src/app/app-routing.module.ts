@@ -35,11 +35,17 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
+
+  {
+    path: 'genqr',
+    loadChildren: () => import('./genqr/genqr.module').then( m => m.GenqrPageModule)
+  },
   
   {
     path: '**',
     loadChildren: () => import('./error404/error404.module').then( m => m.Error404PageModule)
-  },
+  }
+
 
 
 
