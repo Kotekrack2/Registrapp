@@ -10,7 +10,7 @@ import { CapacitorBarcodeScanner, CapacitorBarcodeScannerOptions, CapacitorBarco
 export class InicioPage implements OnInit {
   email: string = '';       
   nombreUsuario: string = '';  
-  qrData: string | null = null; // Variable para almacenar datos del escaneo
+  qrData: string | null = null;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -21,21 +21,20 @@ export class InicioPage implements OnInit {
 
   async startScan() {
     try {
-      // Configuración de las opciones de escaneo
       const options: CapacitorBarcodeScannerOptions = {
-        hint: CapacitorBarcodeScannerTypeHint.QR_CODE, // Indicamos que solo escanearemos QR
+        hint: CapacitorBarcodeScannerTypeHint.QR_CODE, 
         cameraDirection: CapacitorBarcodeScannerCameraDirection.BACK, // Usamos la cámara trasera
         scanInstructions: "Escanee el código QR",
         scanButton: true,
-        scanText: "Escanear", // Texto que se muestra en el botón
+        scanText: "Escanear", 
       };
 
-      // Iniciar el escaneo con las opciones definidas
+
       const result: CapacitorBarcodeScannerScanResult = await CapacitorBarcodeScanner.scanBarcode(options);
 
       // Verificar si el escaneo fue exitoso
       if (result && result.ScanResult) {
-        this.qrData = result.ScanResult; // Guardamos el resultado del escaneo
+        this.qrData = result.ScanResult; // 
         alert(`Código escaneado: ${this.qrData}`);
       } else {
         alert('No se detectó ningún código.');
