@@ -4,18 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { InicioPageRoutingModule } from './inicio-routing.module';
+import { GenqrPageRoutingModule } from './genqr-routing.module';
 
-import { InicioPage } from './inicio.page';
-
+import { GenqrPage } from './genqr.page';
+import { QrCodeModule } from 'ng-qrcode';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioPageRoutingModule,
+    GenqrPageRoutingModule,
+    QrCodeModule
   ],
-  declarations: [InicioPage]
+  declarations: [GenqrPage]
 })
-export class InicioPageModule {}
+export class GenqrPageModule {}
