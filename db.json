@@ -1,14 +1,9 @@
 {
   "usuarios": [
     {
-      "correo": "balta@gmail.com",
-      "contrasena": "balta",
-      "id": "c31d"
-    },
-    {
-      "id": "6495",
-      "correo": "jaja@gmail.com",
-      "contrasena": "12345"
+      "id": "741d",
+      "correo": "josedonoso@gmail.com",
+      "contrasena": "cotetito"
     }
   ]
 }
