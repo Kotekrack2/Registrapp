@@ -17,7 +17,7 @@
         <ion-card-title>Bienvenido</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>¡Hola, {{ nombreUsuario }}</p>
+        <p>¡Hola,</p>
         <p>Has iniciado sesión exitosamente.</p>
 
         <!-- Botón de Admin -->
@@ -27,7 +27,7 @@
         <ion-button expand="full" color="secondary" routerLink="/genqr">Generar QR</ion-button>
 
         <!-- Botón Escanear QR -->
-        <ion-button expand="full" color="tertiary" (click)="startScan()">Escanear QR</ion-button>
+        <ion-button expand="full" color="tertiary" (click)="openScanner()">Escanear QR</ion-button>
       </ion-card-content>
     </ion-card>
   </div>
